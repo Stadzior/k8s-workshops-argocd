@@ -6,7 +6,7 @@ metadata:
     {{- include "guestbook-chart.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.replicaCount }} + 1
   {{- end }}
   selector:
     matchLabels:
